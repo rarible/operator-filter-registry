@@ -5,7 +5,7 @@ import {OperatorFilterer} from "./OperatorFilterer.sol";
 import {CANONICAL_CORI_SUBSCRIPTION} from "./lib/Constants.sol";
 /**
  * @title  DefaultOperatorFilterer
- * @notice Inherits from OperatorFilterer and automatically subscribes to the default OpenSea subscription.
+ * @notice Inherits from OperatorFilterer and automatically subscribes to the default Rarible subscription.
  * @dev    Please note that if your token contract does not provide an owner with EIP-173, it must provide
  *         administration methods on the contract itself to interact with the registry otherwise the subscription
  *         will be locked to the options set during construction.

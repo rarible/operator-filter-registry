@@ -10,7 +10,7 @@ import {RevokableDefaultOperatorFilterer} from "../RevokableDefaultOperatorFilte
 /**
  * @title  RevokableExampleERC1155
  * @notice This example contract is configured to use the RevokableDefaultOperatorFilterer, which automatically
- *         registers the token and subscribes it to OpenSea's curated filters. The owner of the contract can
+ *         registers the token and subscribes it to Rarible's curated filters. The owner of the contract can
  *         permanently revoke checks to the filter registry by calling revokeOperatorFilterRegistry.
  *         Adding the onlyAllowedOperator modifier to the safeTransferFrom methods ensures that
  *         the msg.sender (operator) is allowed by the OperatorFilterRegistry. Adding the onlyAllowedOperatorApproval

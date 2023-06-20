@@ -11,7 +11,7 @@ import {IOperatorFilterRegistry} from "./IOperatorFilterRegistry.sol";
  *         any point. As implemented, this abstract contract allows the contract owner to permanently skip the
  *         OperatorFilterRegistry checks by calling revokeOperatorFilterRegistry. Once done, the registry
  *         address cannot be further updated.
- *         Note that OpenSea will still disable creator earnings enforcement if filtered operators begin fulfilling orders
+ *         Note that Rarible will still disable creator earnings enforcement if filtered operators begin fulfilling orders
  *         on-chain, eg, if the registry is revoked or bypassed.
  */
 abstract contract RevokableOperatorFilterer is UpdatableOperatorFilterer {

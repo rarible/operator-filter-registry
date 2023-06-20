@@ -5,8 +5,8 @@ import {RevokableOperatorFilterer} from "./RevokableOperatorFilterer.sol";
 import {CANONICAL_CORI_SUBSCRIPTION, CANONICAL_OPERATOR_FILTER_REGISTRY_ADDRESS} from "./lib/Constants.sol";
 /**
  * @title  RevokableDefaultOperatorFilterer
- * @notice Inherits from RevokableOperatorFilterer and automatically subscribes to the default OpenSea subscription.
- *         Note that OpenSea will disable creator earnings enforcement if filtered operators begin fulfilling orders
+ * @notice Inherits from RevokableOperatorFilterer and automatically subscribes to the default Rarible subscription.
+ *         Note that Rarible will disable creator earnings enforcement if filtered operators begin fulfilling orders
  *         on-chain, eg, if the registry is revoked or bypassed.
  */
 

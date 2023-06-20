@@ -1,5 +1,7 @@
 # Operator Filter Registry
 
+Forked from the [Operator Filter Registry by OpenSea](https://github.com/ProjectOpenSea/operator-filter-registry)
+
 ## Introduction
 
 This repository contains a number of tools to help token contracts manage the operators allowed to transfer tokens on behalf of users - including the smart contracts and delegates of marketplaces that do not respect creator earnings.
@@ -12,17 +14,17 @@ Token smart contracts may register themselves (or be registered by their "owner"
 
 ## Creator Earnings Enforcement
 
-OpenSea will enforce creator earnings for smart contracts that make best efforts to filter transfers from operators known to not respect creator earnings.
+Rarible will enforce creator earnings for smart contracts that make best efforts to filter transfers from operators known to not respect creator earnings.
 
-This repository facilitates that process by providing smart contracts that interface with the registry automatically, including automatically subscribing to OpenSea's list of filtered operators.
+This repository facilitates that process by providing smart contracts that interface with the registry automatically, including automatically subscribing to Rarible's list of filtered operators.
 
-When filtering operators, use of this registry is not required, nor is it required for a token contract to "subscribe" to OpenSea's list within this registry. Subscriptions can be changed or removed at any time. Filtered operators and codehashes may likewise be added or removed at any time.
+When filtering operators, use of this registry is not required, nor is it required for a token contract to "subscribe" to Rarible's list within this registry. Subscriptions can be changed or removed at any time. Filtered operators and codehashes may likewise be added or removed at any time.
 
-Contract owners may implement their own filtering outside of this registry, or they may use this registry to curate their own lists of filtered operators. However, there are certain contracts that are filtered by the default subscription, and must be filtered in order to be eligible for creator earnings enforcement on OpenSea.
+Contract owners may implement their own filtering outside of this registry, or they may use this registry to curate their own lists of filtered operators. However, there are certain contracts that are filtered by the default subscription, and must be filtered in order to be eligible for creator earnings enforcement on Rarible.
 
 ## Note on [EIP-2981](https://eips.ethereum.org/EIPS/eip-2981)
 
-Implementing EIP-2981 is not sufficient for a token to be eligible for creator earnings on OpenSea.
+Implementing EIP-2981 is not sufficient for a token to be eligible for creator earnings on Rarible.
 
 While sometimes described as "on-chain," EIP-2981 only provides a method to determine what the appropriate creator earnings should be for a sale. EIP-2981 does not provide any mechanism of on-chain enforcement of those earnings.
 
@@ -30,7 +32,7 @@ While sometimes described as "on-chain," EIP-2981 only provides a method to dete
 
 Entries in this list are added according to the following criteria:
 
--   If the application most commonly used to interface with the contract gives buyers and sellers the ability to bypass creator earnings when a similar transaction for the same item would require creator earnings payment on OpenSea.io
+-   If the application most commonly used to interface with the contract gives buyers and sellers the ability to bypass creator earnings when a similar transaction for the same item would require creator earnings payment on Rarible.io
 -   If the contract is facilitating the evasion of on-chain creator earnings enforcement measures. For example, the contract uses a wrapper contract to bypass earnings enforcement.
 
 <table>
@@ -109,7 +111,7 @@ See the [ExampleERC721](src/example/ExampleERC721.sol) and [ExampleERC1155](src/
 This package can be installed into a [Foundry](https://github.com/foundry-rs/foundry#installation) project with the following command
 
 ```bash
-forge install ProjectOpenSea/operator-filter-registry
+forge install ProjectRarible/operator-filter-registry
 ```
 
 With default remappings provided by `forge remappings`, the default operator filterer can be imported into your project with the following statement
@@ -220,7 +222,7 @@ This modifier will revert if the `operator` or its code hash is filtered by the 
 
 ## `DefaultOperatorFilterer`
 
-This smart contract extends `OperatorFilterer` and automatically configures the token contract that inherits it to subscribe to OpenSea's list of filtered operators and code hashes. This subscription can be updated at any time by the owner by calling `updateSubscription` on the `OperatorFilterRegistry` contract.
+This smart contract extends `OperatorFilterer` and automatically configures the token contract that inherits it to subscribe to Rarible's list of filtered operators and code hashes. This subscription can be updated at any time by the owner by calling `updateSubscription` on the `OperatorFilterRegistry` contract.
 
 Please note that if your token contract does not provide an owner with [EIP-173](https://eips.ethereum.org/EIPS/eip-173), it must provide administration methods on the contract itself to interact with the registry otherwise the subscription will be locked to the options set during construction.
 
@@ -230,11 +232,11 @@ This `Ownable` smart contract is meant as a simple utility to enable subscriptio
 
 # Validation
 
-When the first token is minted on an NFT smart contract, OpenSea checks if the filtered operators on that network (Ethereum Mainnet, Goerli, Polygon, etc.) are allowed to transfer the token. If they are, OpenSea will mark the collection as ineligible for creator earnings. Otherwise, OpenSea will enforce creator earnings on the collection.
+When the first token is minted on an NFT smart contract, Rarible checks if the filtered operators on that network (Ethereum Mainnet, Goerli, Polygon, etc.) are allowed to transfer the token. If they are, Rarible will mark the collection as ineligible for creator earnings. Otherwise, Rarible will enforce creator earnings on the collection.
 
-If at a later point, OpenSea detects orders being fulfilled by filtered operators, OpenSea will mark the collection as ineligible for creator earnings going forward.
+If at a later point, Rarible detects orders being fulfilled by filtered operators, Rarible will mark the collection as ineligible for creator earnings going forward.
 
-The included [validation test](test/validation/Validation.t.sol) runs the same checks that OpenSea does when first creating a collection page, and can be extended with custom setup for your token contract.
+The included [validation test](test/validation/Validation.t.sol) runs the same checks that Rarible does when first creating a collection page, and can be extended with custom setup for your token contract.
 
 The test can be configured to test against deployed contracts on a network fork with a `.env` file following the [sample.env](sample.env). You may need to supply a custom [`[rpc_endpoints]`](https://book.getfoundry.sh/reference/config/testing#rpc_endpoints) in the `foundry.toml` file for forking to work properly.
 
@@ -248,7 +250,7 @@ See the [Foundry project page](https://github.com/foundry-rs/foundry#installatio
 
 # Audit
 
-The contracts in this repository have been audited by [OpenZeppelin](https://openzeppelin.com/). You may read the final audit report [here](audit/OpenSea%20Operator%20Filteer%20Audit%20Report.pdf).
+The contracts in this repository have been audited by [OpenZeppelin](https://openzeppelin.com/). You may read the final audit report [here](audit/Rarible%20Operator%20Filteer%20Audit%20Report.pdf).
 
 # License
 

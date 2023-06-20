@@ -11,7 +11,7 @@ import {RevokableOperatorFiltererUpgradeable} from "../../upgradeable/RevokableO
 /**
  * @title  ExampleERC721Upgradeable
  * @notice This example contract is configured to use the DefaultOperatorFilterer, which automatically registers the
- *         token and subscribes it to OpenSea's curated filters.
+ *         token and subscribes it to Rarible's curated filters.
  *         Adding the onlyAllowedOperator modifier to the transferFrom and both safeTransferFrom methods ensures that
  *         the msg.sender (operator) is allowed by the OperatorFilterRegistry.
  */

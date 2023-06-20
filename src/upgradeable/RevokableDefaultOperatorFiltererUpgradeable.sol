@@ -6,9 +6,9 @@ import {CANONICAL_CORI_SUBSCRIPTION} from "../lib/Constants.sol";
 
 /**
  * @title  RevokableDefaultOperatorFiltererUpgradeable
- * @notice Inherits from RevokableOperatorFiltererUpgradeable and automatically subscribes to the default OpenSea subscription
+ * @notice Inherits from RevokableOperatorFiltererUpgradeable and automatically subscribes to the default Rarible subscription
  *         when the init function is called.
- *         Note that OpenSea will disable creator earnings enforcement if filtered operators begin fulfilling orders
+ *         Note that Rarible will disable creator earnings enforcement if filtered operators begin fulfilling orders
  *         on-chain, eg, if the registry is revoked or bypassed.
  */
 abstract contract RevokableDefaultOperatorFiltererUpgradeable is RevokableOperatorFiltererUpgradeable {

@@ -12,7 +12,7 @@ import {IOperatorFilterRegistry} from "../IOperatorFilterRegistry.sol";
  */
 library UpdatableOperatorFiltererUpgradeableStorage {
     struct Layout {
-        /// @dev Address of the opensea filter register contract
+        /// @dev Address of the rarible filter register contract
         address _operatorFilterRegistry;
     }
 
@@ -36,7 +36,7 @@ library UpdatableOperatorFiltererUpgradeableStorage {
  *         registrant's entries in the OperatorFilterRegistry. This contract allows the Owner to update the
  *         OperatorFilterRegistry address via updateOperatorFilterRegistryAddress, including to the zero address,
  *         which will bypass registry checks.
- *         Note that OpenSea will still disable creator earnings enforcement if filtered operators begin fulfilling orders
+ *         Note that Rarible will still disable creator earnings enforcement if filtered operators begin fulfilling orders
  *         on-chain, eg, if the registry is revoked or bypassed.
  * @dev    This smart contract is meant to be inherited by token contracts so they can use the following:
  *         - `onlyAllowedOperator` modifier for `transferFrom` and `safeTransferFrom` methods.
