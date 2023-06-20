@@ -6,7 +6,7 @@ import {RevokableUpgradeableFilterer} from "../helpers/RevokableUpgradeableFilte
 
 contract RevokableUpgradeableOperatorFiltererTest is BaseRegistryTest {
     RevokableUpgradeableFilterer filterer;
-    address constant DEFAULT_SUBSCRIPTION = address(0x3cc6CddA760b79bAfa08dF41ECFA224f810dCeB6);
+    address constant DEFAULT_SUBSCRIPTION = address(0x0766762289477338fa05DA55F6E4E5F5fa681F64);
     address filteredAddress;
     address filteredCodeHashAddress;
     bytes32 filteredCodeHash;

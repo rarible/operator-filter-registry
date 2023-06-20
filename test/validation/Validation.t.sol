@@ -26,8 +26,8 @@ interface IERC721SeaDrop {
 contract ValidationTest is Test {
     address constant LOOKSRAREV2_TRANSFER_MANAGER = 0x000000000060C4Ca14CfC4325359062ace33Fe3D;
 
-    address constant CANONICAL_OPERATOR_FILTER_REGISTRY = 0x000000000000AAeB6D7670E522A718067333cd4E;
-    address constant CANONICAL_REGISTRANT = 0x3cc6CddA760b79bAfa08dF41ECFA224f810dCeB6;
+    address constant CANONICAL_OPERATOR_FILTER_REGISTRY = 0x044Ae8A69a6d009b7B74a4d85273b4373C0CAaE0;
+    address constant CANONICAL_REGISTRANT = 0x0766762289477338fa05DA55F6E4E5F5fa681F64;
 
     // Contract to test against
     /// The token contract to test against.

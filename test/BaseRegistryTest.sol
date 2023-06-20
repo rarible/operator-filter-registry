@@ -5,7 +5,7 @@ import {Test} from "forge-std/Test.sol";
 import {OperatorFilterRegistry, OperatorFilterRegistryErrorsAndEvents} from "../src/OperatorFilterRegistry.sol";
 
 contract BaseRegistryTest is Test, OperatorFilterRegistryErrorsAndEvents {
-    OperatorFilterRegistry constant registry = OperatorFilterRegistry(0x000000000000AAeB6D7670E522A718067333cd4E);
+    OperatorFilterRegistry constant registry = OperatorFilterRegistry(0x044Ae8A69a6d009b7B74a4d85273b4373C0CAaE0);
 
     function setUp() public virtual {
         address deployedRegistry = address(new OperatorFilterRegistry());

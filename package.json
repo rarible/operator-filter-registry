@@ -5,6 +5,7 @@
     "author": "Operator Filterer <operatorfilterer@gmail.com>",
     "license": "MIT",
     "dependencies": {
+        "@openzeppelin/cli": "^2.8.2",
         "@openzeppelin/contracts": "^4.7.3",
         "@openzeppelin/contracts-upgradeable": "^4.8.2"
     },
