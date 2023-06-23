@@ -13,6 +13,7 @@ contract DeployRegistry is ScriptBase {
         // bytes32 salt = bytes32(0);
 
         vm.broadcast(deployer);
-        IMMUTABLE_CREATE2_FACTORY.safeCreate2(salt, creationCode);
+        address operatorFilterRegistry = IMMUTABLE_CREATE2_FACTORY.safeCreate2(salt, creationCode);
+        console2.logAddress(operatorFilterRegistry);
     }
 }

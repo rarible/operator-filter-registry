@@ -17,7 +17,7 @@ contract ExampleERC1155Test is BaseRegistryTest {
     TestableExampleERC1155 example;
     address filteredAddress;
 
-    address constant DEFAULT_SUBSCRIPTION = address(0x0766762289477338fa05DA55F6E4E5F5fa681F64);
+    address constant DEFAULT_SUBSCRIPTION = address(0x34E671dDFBEc90E6336854268795372D41029c9f);
 
     function setUp() public override {
         super.setUp();

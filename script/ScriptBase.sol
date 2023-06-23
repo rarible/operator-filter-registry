@@ -24,7 +24,7 @@ contract ScriptBase is Script {
     address deployer;
 
     ImmutableCreate2Factory constant IMMUTABLE_CREATE2_FACTORY =
-        ImmutableCreate2Factory(0x0000000000FFe8B47B3e2130213B802212439497);
+        ImmutableCreate2Factory(0xa7CA44E30d617184750e8F750Af4Bd14dD6B7774);
 
     function setUp() public {
         bytes32 pkey = vm.envBytes32("PRIVATE_KEY");

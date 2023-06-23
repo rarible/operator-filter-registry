@@ -6,7 +6,7 @@ import {IOperatorFilterRegistry} from "../src/IOperatorFilterRegistry.sol";
 import {DeployRegistry} from "./DeployRegistry.s.sol";
 import {ScriptBase, console2} from "./ScriptBase.sol";
 
-contract DeployRegistryAndConfigureOwnedRegistrant is ScriptBase {
+contract DeployAndConfigureOwnedRegistrant is ScriptBase {
     function run() public {
         setUp();
         address registryAddress = vm.envAddress("REGISTRY_ADDRESS");
