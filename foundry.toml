@@ -17,9 +17,10 @@ evm_version = 'shanghai'
 [rpc_endpoints]
 goerli = "${GOERLI_RPC_URL}"
 polygon = "${POLYGON_RPC_URL}"
+mumbai = "${MUMBAI_RPC_URL}"
 
 [etherscan]
 goerli = { key = "${ETHERSCAN_GOERLI}" }
 polygon = { key = "${ETHERSCAN_POLYGON}" }
-
+mumbai = {key = "${ETHERSCAN_MUMBAI}"}
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
